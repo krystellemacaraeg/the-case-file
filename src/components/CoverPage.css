@@ -1,0 +1,288 @@
+﻿
+
+/* ── COVER PAGE ─────────────────────────────────────────── */
+.cover-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding-top: var(--space-16);
+  padding-bottom: var(--space-16);
+  position: relative;
+  max-width: 680px;
+}
+
+/* ── FILED STAMP ─────────────────────────────────────────── */
+.cover-stamp {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  font-family: var(--font-label);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  letter-spacing: var(--tracking-widest);
+  color: #8b1a1a;
+  border: 2.5px solid #8b1a1a;
+  padding: var(--space-2) var(--space-5);
+  transform: rotate(4deg) scale(1.4);
+  opacity: 0;
+}
+
+.cover-stamp--visible {
+  animation: stamp-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.6s forwards;
+}
+
+@keyframes stamp-in {
+  0%   { opacity: 0; transform: rotate(4deg) scale(1.4); }
+  60%  { opacity: 1; transform: rotate(4deg) scale(0.95); }
+  100% { opacity: 0.85; transform: rotate(4deg) scale(1); }
+}
+
+/* ── TITLE BLOCK ─────────────────────────────────────────── */
+.cover-title-block {
+  text-align: center;
+  padding-bottom: var(--space-4);
+  border-bottom: 3px double var(--color-ruling-line);
+  margin-bottom: var(--space-2);
+}
+
+.cover-title {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-ink);
+  line-height: var(--leading-tight);
+  margin-bottom: var(--space-3);
+  text-transform: uppercase;
+}
+
+.cover-subtitle {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-style: italic;
+  color: var(--color-ink-muted);
+  line-height: var(--leading-snug);
+}
+
+.cover-subtitle-note {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-ink-faint);
+  margin-top: var(--space-1);
+}
+
+/* ── COURT LABEL ─────────────────────────────────────────── */
+.cover-court-label {
+  font-family: var(--font-label);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: var(--tracking-widest);
+  text-align: center;
+  color: var(--color-ink-soft);
+  text-transform: uppercase;
+  margin-top: var(--space-2);
+}
+
+.cover-division {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-style: italic;
+  text-align: center;
+  color: var(--color-ink-muted);
+}
+
+/* ── PARTIES ─────────────────────────────────────────────── */
+.cover-matter {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-2) 0;
+  text-align: left;
+}
+
+.cover-in-the-matter {
+  font-family: var(--font-label);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-ink-faint);
+  margin-bottom: var(--space-3);
+}
+
+.cover-party {
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  color: var(--color-ink);
+  line-height: var(--leading-snug);
+  text-align: left;
+}
+
+.cover-party strong {
+  font-weight: 700;
+}
+
+.cover-party-note {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-style: italic;
+  color: var(--color-ink-faint);
+  padding-left: var(--space-4);
+  margin-bottom: var(--space-3);
+  text-align: left;
+}
+
+.cover-versus {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-style: italic;
+  color: var(--color-ink-muted);
+  padding: var(--space-2) 0;
+  text-align: left;
+  padding-left: 0;
+}
+
+/* ── META ────────────────────────────────────────────────── */
+.cover-meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.cover-meta p {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-ink-soft);
+}
+
+.cover-meta-label {
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+/* ── RE BLOCK ────────────────────────────────────────────── */
+.cover-re {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-style: italic;
+  color: var(--color-ink-muted);
+  line-height: var(--leading-relaxed);
+}
+
+.cover-re-indent {
+  padding-left: 2em;
+}
+
+/* ── FOOTER BLOCK ────────────────────────────────────────── */
+.cover-footer-block {
+  display: flex;
+  gap: var(--space-12);
+  flex-wrap: wrap;
+}
+
+.cover-footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-ink-soft);
+}
+
+.cover-footer-label {
+  font-family: var(--font-label);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-ink-faint);
+  margin-bottom: var(--space-1);
+}
+
+.cover-footer-note {
+  font-style: italic;
+  color: var(--color-ink-faint);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ── DOCKET NUMBER EASTER EGG ────────────────────────────── */
+.cover-docket-number {
+  position: relative;
+  cursor: help;
+  border-bottom: 1px dotted var(--color-ink-faint);
+}
+
+.cover-docket-tooltip {
+  position: absolute;
+  left: 0;
+  top: calc(100% + var(--space-2));
+  background: var(--color-ink-soft);
+  color: var(--color-parchment);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-style: italic;
+  font-weight: 400;
+  white-space: normal;
+  max-width: 420px;
+  width: max-content;
+  padding: var(--space-3) var(--space-5);
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity var(--transition-base), transform var(--transition-base);
+  z-index: 50;
+  border: 1px solid var(--color-ink);
+}
+
+.cover-docket-number:hover .cover-docket-tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ── DOCKET NUMBER EASTER EGG ────────────────────────────── */
+.cover-docket-number {
+  position: relative;
+  cursor: help;
+  border-bottom: 1px dotted var(--color-ink-faint);
+  display: inline-block;
+}
+
+.cover-docket-tooltip {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 8px);
+  background: var(--color-ink-soft);
+  color: var(--color-parchment);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-style: italic;
+  font-weight: 400;
+  white-space: normal;
+  max-width: 420px;
+  width: max-content;
+  padding: 0.5rem 0.875rem;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 300ms ease, transform 300ms ease;
+  z-index: 50;
+  border: 1px solid var(--color-ink);
+  line-height: 1.6;
+}
+
+.cover-docket-number:hover .cover-docket-tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
+

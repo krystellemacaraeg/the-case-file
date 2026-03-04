@@ -1,0 +1,147 @@
+﻿/* -- RELIEF SOUGHT ----------------------------------------- */
+.relief-sought {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding-bottom: 0;
+}
+
+/* -- INTRO LINE -------------------------------------------- */
+.relief-intro {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-ink-soft);
+  line-height: var(--leading-relaxed);
+}
+
+/* -- LIST -------------------------------------------------- */
+.relief-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  padding-left: var(--space-4);
+  border-left: 2px solid var(--color-border);
+}
+
+/* -- ITEM -------------------------------------------------- */
+.relief-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-surface-raised);
+  border: 1px solid var(--color-border-light);
+  position: relative;
+  transition:
+    background var(--transition-base),
+    border-color var(--transition-base),
+    transform var(--transition-base);
+}
+
+.relief-item::before {
+  content: '';
+  position: absolute;
+  left: -2px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--color-gold);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.relief-item:hover {
+  background: var(--color-parchment);
+  border-color: var(--color-border);
+  transform: translateX(3px);
+}
+
+.relief-item:hover::before {
+  opacity: 1;
+}
+
+/* -- MARKER ------------------------------------------------ */
+.relief-marker {
+  font-family: var(--font-label);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-ink-faint);
+  flex-shrink: 0;
+  min-width: 2em;
+  padding-top: 0.15em;
+  letter-spacing: var(--tracking-wide);
+}
+
+/* -- TEXT -------------------------------------------------- */
+.relief-text {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-ink-soft);
+  line-height: var(--leading-relaxed);
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* -- FINAL ITEM � his existence ---------------------------- */
+.relief-item:last-child .relief-text {
+  font-style: italic;
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+.relief-item:last-child .relief-marker {
+  color: var(--color-gold);
+}
+
+/* -- CLOSING BLOCK ----------------------------------------- */
+.relief-closing {
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-border-light);
+  text-align: center;
+}
+
+.relief-closing p {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-ink-muted);
+  line-height: var(--leading-relaxed);
+  font-style: normal;
+}
+
+.relief-closing-final {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-ink-muted);
+  font-style: normal;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ── HIDDEN MESSAGE ──────────────────────────────────────── */
+.relief-hidden-message {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-gold);
+  margin-top: var(--space-3);
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  pointer-events: none;
+}
+
+.relief-item:last-child:hover .relief-hidden-message {
+  opacity: 1;
+  transform: translateY(0);
+}

@@ -1,0 +1,61 @@
+﻿/* -- SCROLL PROGRESS --------------------------------------- */
+.scroll-progress-track {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-parchment-deeper);
+  z-index: 1000;
+  overflow: visible;
+}
+
+/* -- BAR --------------------------------------------------- */
+.scroll-progress-bar {
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    var(--color-gold),
+    var(--color-gold-light)
+  );
+  transition: width 80ms linear;
+  transform-origin: left;
+  position: relative;
+}
+
+/* -- GLOW POINT -------------------------------------------- */
+.scroll-progress-glow {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-gold-light);
+  box-shadow:
+    0 0 6px 2px var(--color-gold-light),
+    0 0 12px 4px rgba(184, 151, 90, 0.4);
+  transition: left 80ms linear;
+  pointer-events: none;
+}
+
+/* -- HIDE UNTIL SCROLLED ----------------------------------- */
+.scroll-progress-track {
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.scroll-progress-track:has(.scroll-progress-bar[style*="width: 0"]) {
+  opacity: 0;
+}
+
+.scroll-progress-bar[style]:not([style*="width: 0%"]) {
+  opacity: 1;
+}
+
+.scroll-progress-track:has(.scroll-progress-bar:not([style*="width: 0%"])) {
+  opacity: 1;
+}
+
+
+

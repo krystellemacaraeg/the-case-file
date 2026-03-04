@@ -1,0 +1,93 @@
+﻿:root {
+  /* -- COLORS ------------------------------------------- */
+  --color-parchment:        #f5f0e8;
+  --color-parchment-dark:   #ede6d6;
+  --color-parchment-deeper: #e0d8c5;
+  --color-ink:              #1a1714;
+  --color-ink-soft:         #2e2a25;
+  --color-ink-muted:        #5a5248;
+  --color-ink-faint:        #8a8078;
+  --color-gold:             #9a7c3f;
+  --color-gold-light:       #b8975a;
+  --color-gold-faint:       #c9a96e22;
+  --color-surface:          #efe9da;
+  --color-surface-raised:   #f8f4ec;
+  --color-border:           #c8bfa8;
+  --color-border-light:     #ddd5c0;
+  --color-ruling-line:      #b0a48a;
+
+  /* -- TYPOGRAPHY ---------------------------------------- */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Lora', Georgia, serif;
+  --font-label: 'Playfair Display', Georgia, serif;
+
+  --text-xs:   0.75rem;
+  --text-sm:   0.875rem;
+  --text-base: 1rem;
+  --text-md:   1.125rem;
+  --text-lg:   1.375rem;
+  --text-xl:   1.75rem;
+  --text-2xl:  2.25rem;
+  --text-3xl:  3rem;
+  --text-4xl:  4rem;
+
+  --leading-tight:   1.2;
+  --leading-snug:    1.4;
+  --leading-normal:  1.6;
+  --leading-relaxed: 1.8;
+  --leading-loose:   2.0;
+
+  --tracking-tight:  -0.02em;
+  --tracking-normal:  0em;
+  --tracking-wide:    0.06em;
+  --tracking-widest:  0.18em;
+
+  /* -- SPACING ------------------------------------------- */
+  --space-1:  0.25rem;   /* 4px  */
+  --space-2:  0.5rem;    /* 8px  */
+  --space-3:  0.75rem;   /* 12px */
+  --space-4:  1rem;      /* 16px */
+  --space-5:  1.25rem;   /* 20px */
+  --space-6:  1.5rem;    /* 24px */
+  --space-7:  1.75rem;   /* 28px */
+  --space-8:  2rem;      /* 32px */
+  --space-10: 2.5rem;    /* 40px */
+  --space-12: 3rem;      /* 48px */
+  --space-14: 3.5rem;    /* 56px */
+  --space-16: 4rem;      /* 64px */
+
+  /* -- BORDER RADIUS ------------------------------------- */
+  --radius-sm:   2px;
+  --radius-base: 4px;
+  --radius-md:   6px;
+  --radius-lg:   10px;
+
+  /* -- SHADOWS ------------------------------------------- */
+  --shadow-paper:
+    0 1px 3px rgba(60, 45, 20, 0.08),
+    0 4px 12px rgba(60, 45, 20, 0.06),
+    0 1px 2px rgba(60, 45, 20, 0.04);
+  --shadow-lifted:
+    0 2px 8px rgba(60, 45, 20, 0.10),
+    0 8px 24px rgba(60, 45, 20, 0.08),
+    0 1px 3px rgba(60, 45, 20, 0.06);
+  --shadow-exhibit:
+    0 4px 16px rgba(60, 45, 20, 0.12),
+    0 1px 4px rgba(60, 45, 20, 0.08),
+    inset 0 1px 0 rgba(255,255,255,0.4);
+  --shadow-inset:
+    inset 0 1px 4px rgba(60, 45, 20, 0.08);
+
+  /* -- TRANSITIONS --------------------------------------- */
+  --transition-fast:   150ms ease;
+  --transition-base:   300ms ease;
+  --transition-slow:   600ms ease;
+
+  /* -- LAYOUT -------------------------------------------- */
+  --page-max-width: 780px;
+  --page-padding:   var(--space-8);
+}
+
+
+
+

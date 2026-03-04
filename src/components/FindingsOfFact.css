@@ -1,0 +1,75 @@
+﻿/* -- FINDINGS OF FACT -------------------------------------- */
+.findings-of-fact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  margin-top: var(--space-4);
+}
+
+/* -- INDIVIDUAL FINDING ------------------------------------ */
+.finding-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-5);
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity var(--transition-slow),
+    transform var(--transition-slow);
+}
+
+.finding-item--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* -- PILCROW NUMBER ---------------------------------------- */
+.finding-pilcrow {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 500;
+  font-style: italic;
+  color: var(--color-gold);
+  flex-shrink: 0;
+  min-width: 2.8em;
+  padding-top: 0.1em;
+  opacity: 0.85;
+  user-select: none;
+}
+
+/* -- FINDING TEXT ------------------------------------------ */
+.finding-text {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-ink-soft);
+  line-height: var(--leading-relaxed);
+  text-align: justify;
+  hyphens: none;
+  flex: 1;
+}
+
+/* -- FINAL FINDING � conclusive weight --------------------- */
+.finding-item:last-child .finding-text {
+  font-style: italic;
+  font-weight: 700;
+  color: var(--color-ink);
+  font-size: var(--text-md);
+}
+
+.finding-item:last-child .finding-pilcrow {
+  opacity: 1;
+}
+
+/* -- SIXTH FINDING � the pivot ----------------------------- */
+.finding-item:nth-child(6) .finding-text {
+  font-style: italic;
+  color: var(--color-ink-muted);
+  font-size: var(--text-md);
+}
+
+
+
+
+
+
+

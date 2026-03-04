@@ -1,0 +1,144 @@
+﻿/* ── EXHIBIT CARD ────────────────────────────────────────── */
+.exhibit {
+  background: var(--color-surface-raised);
+  border: 1px solid var(--color-border);
+  border-top: 3px solid var(--color-gold);
+  padding: var(--space-8);
+  margin-bottom: var(--space-8);
+  box-shadow: var(--shadow-exhibit);
+  transition: transform var(--transition-base),
+              box-shadow var(--transition-base);
+  position: relative;
+}
+
+.exhibit::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(255,255,255,0.18) 0%,
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+.exhibit:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 6px 24px rgba(60, 45, 20, 0.13),
+    0 2px 6px rgba(60, 45, 20, 0.08),
+    inset 0 1px 0 rgba(255,255,255,0.45);
+}
+
+/* ── TOP ROW ─────────────────────────────────────────────── */
+.exhibit-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-3);
+}
+
+.exhibit-letter {
+  font-family: var(--font-label);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.exhibit-category {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-style: italic;
+  color: var(--color-ink-faint);
+  text-align: right;
+}
+
+/* ── TITLE ───────────────────────────────────────────────── */
+.exhibit-title {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-ink);
+  line-height: var(--leading-snug);
+  margin-bottom: var(--space-4);
+}
+
+/* ── BODY ────────────────────────────────────────────────── */
+.exhibit-body {
+  margin-top: var(--space-5);
+}
+
+.exhibit-body p {
+  color: var(--color-ink-soft);
+  margin-bottom: var(--space-4);
+  text-indent: 0;
+}
+
+.exhibit-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── NOTATION ────────────────────────────────────────────── */
+.exhibit-notation {
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border-light);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-style: italic;
+  color: var(--color-ink-muted);
+  line-height: var(--leading-relaxed);
+}
+
+.exhibit-notation-label {
+  font-style: normal;
+  font-family: var(--font-label);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-ink-faint);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  margin-right: var(--space-1);
+}
+
+/* ── SEALED VARIANT ──────────────────────────────────────── */
+.exhibit--sealed {
+  background: var(--color-parchment-deeper);
+  border-top-color: var(--color-ink-faint);
+}
+
+.exhibit--sealed:hover {
+  transform: none;
+}
+
+.exhibit--sealed .exhibit-letter {
+  color: var(--color-ink-faint);
+}
+
+.exhibit-title--sealed {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-ink-muted);
+}
+
+.exhibit-sealed-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.exhibit-sealed-note {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-style: italic;
+  color: var(--color-ink-faint);
+  line-height: var(--leading-relaxed);
+  text-indent: 0 !important;
+  text-align: left;
+}
+

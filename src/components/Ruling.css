@@ -1,0 +1,112 @@
+﻿/* ── RULING ──────────────────────────────────────────────── */
+.ruling {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  padding: var(--space-6) 0;
+}
+
+.ruling-preamble {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-ink-muted);
+  line-height: var(--leading-relaxed);
+  text-align: justify;
+  hyphens: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity var(--transition-slow), transform var(--transition-slow);
+}
+
+.ruling-preamble--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── PAUSE DOTS ──────────────────────────────────────────── */
+.ruling-pause {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4) 0;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.ruling-pause--visible {
+  opacity: 1;
+}
+
+.ruling-pause-dot {
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  opacity: 0;
+}
+
+.ruling-pause--visible .ruling-pause-dot:nth-child(1) {
+  animation: dot-pulse 1s ease 0.1s forwards;
+}
+.ruling-pause--visible .ruling-pause-dot:nth-child(2) {
+  animation: dot-pulse 1s ease 0.5s forwards;
+}
+.ruling-pause--visible .ruling-pause-dot:nth-child(3) {
+  animation: dot-pulse 1s ease 0.9s forwards;
+}
+
+@keyframes dot-pulse {
+  0%   { opacity: 0; transform: scale(0.6); }
+  50%  { opacity: 1; transform: scale(1.2); }
+  100% { opacity: 0.7; transform: scale(1); }
+}
+
+/* ── DECLARATION ─────────────────────────────────────────── */
+.ruling-declaration {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.ruling-declaration--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ruling-main {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  color: var(--color-ink);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-tight);
+  text-align: center;
+  padding: var(--space-4) 0;
+  position: relative;
+}
+
+.ruling-main::before,
+.ruling-main::after {
+  content: '';
+  display: block;
+  width: 40%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--color-gold), transparent);
+  margin: var(--space-4) auto;
+  opacity: 0.5;
+}
+
+.ruling-body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-ink-soft);
+  line-height: var(--leading-relaxed);
+  text-align: justify;
+  hyphens: none;
+}
+
