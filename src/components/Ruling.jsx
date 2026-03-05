@@ -3,30 +3,32 @@ import './Ruling.css'
 
 const Ruling = () => {
   const ref = useRef(null)
-  const [preamble, setPreamble] = useState(false)
   const [dots, setDots] = useState(false)
   const [declaration, setDeclaration] = useState(false)
+  const [coda, setCoda] = useState(false)
   const timers = useRef([])
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setPreamble(false)
           setDots(false)
           setDeclaration(false)
-          timers.current.push(setTimeout(() => setPreamble(true), 100))
-          timers.current.push(setTimeout(() => setDots(true), 500))
-          timers.current.push(setTimeout(() => setDeclaration(true), 2800))
+          setCoda(false)
+          timers.current.forEach(t => clearTimeout(t))
+          timers.current = []
+          timers.current.push(setTimeout(() => setDots(true), 2500))
+          timers.current.push(setTimeout(() => setDeclaration(true), 4000))
+          timers.current.push(setTimeout(() => setCoda(true), 5500))
         } else {
           timers.current.forEach(t => clearTimeout(t))
           timers.current = []
-          setPreamble(false)
           setDots(false)
           setDeclaration(false)
+          setCoda(false)
         }
       },
-      { threshold: 0.4 }
+      { threshold: 0.3 }
     )
     if (ref.current) observer.observe(ref.current)
     return () => observer.disconnect()
@@ -39,20 +41,26 @@ const Ruling = () => {
 
   return (
     <div className="ruling" ref={ref}>
-      <p className={cls('ruling-preamble', preamble)}>
+
+      <p className="ruling-preamble">
         Having reviewed the totality of the evidence, cross-referenced it with the
         Petitioner's documented internal deliberations, and waited what felt like
         a responsible amount of time, the Court issues the following:
       </p>
+
       <div className={cls('ruling-pause', dots)}>
         <span className="ruling-pause-dot" />
         <span className="ruling-pause-dot" />
         <span className="ruling-pause-dot" />
       </div>
+
       <div className={cls('ruling-declaration', declaration)}>
         <p className="ruling-main">
           The Petitioner is in love with the Respondent.
         </p>
+      </div>
+
+      <div className={cls('ruling-coda', coda)}>
         <p className="ruling-body">
           The Court notes this was not a difficult conclusion to reach.
           It was only difficult to say.
@@ -68,6 +76,7 @@ const Ruling = () => {
           and because she has never been good at leaving true things unsaid.
         </p>
       </div>
+
     </div>
   )
 }

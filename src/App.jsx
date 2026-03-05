@@ -52,41 +52,36 @@ const App = () => {
       </SectionBlock>
 
       <SectionBlock numeral="II" label="Statement of Facts">
-        <p>
-          {'\u00b61'}. In December, Petitioner matched with Respondent on a dating application.
-          Communication began that same day, because apparently neither party had anything
-          better to do.
-        </p>
-        <p>
-          {'\u00b62'}. Daily communication followed. Then more daily communication. The Petitioner
-          would like to clarify that she was very normal about
-          this. <Footnote number={2} text="The Petitioner checked her phone with a frequency that this Court is not legally permitted to disclose. What can be disclosed: it was a lot. What cannot be disclosed: the exact number. What the Court will say anyway: it was a lot." />
-        </p>
-        <p>
-          {'\u00b63'}. In January, an official designation was established. The date was not chosen
-          randomly for this filing. The Petitioner will not be elaborating. The Docket Number
-          speaks for itself, if the Respondent cares to look.
-        </p>
-        <p>
-          {'\u00b64'}. The Respondent is a law student. He works night shifts. He is, at any given moment,
-          probably tired. He texts back anyway. The Court finds this either very sweet or very
-          concerning and has decided not to investigate further.
-        </p>
-        <p>
-          {'\u00b65'}. The Petitioner, for her part, thinks too much. She knows this. She has filed this
-          entire legal document instead of just saying the thing, which is submitted as Exhibit A
-          through the entirety of this document.
-        </p>
-        <p>
-          {'\u00b66'}. There were moments of misalignment. They were handled. The Court will not
-          elaborate, not because it lacks information, but because both parties handled it well
-          and that is, frankly, the whole point.
-        </p>
-        <p>
-          {'\u00b67'}. There is a general agreement that these proceedings will, at some point, move into
-          a physical venue. A timeframe has been proposed. The Petitioner is on record as being
-          very chill about this. The Court neither confirms nor denies.
-        </p>
+        <div className="findings-of-fact">
+          <div className="finding-item finding-item--visible">
+            <span className="finding-pilcrow">{"\u00b61."}</span>
+            <p className="finding-text">In December, Petitioner matched with Respondent on a dating application. Communication began that same day, because apparently neither party had anything better to do.</p>
+          </div>
+          <div className="finding-item finding-item--visible">
+            <span className="finding-pilcrow">{"\u00b62."}</span>
+            <p className="finding-text">Daily communication followed. Then more daily communication. The Petitioner would like to clarify that she was very normal about this. <Footnote number={2} text="The Petitioner checked her phone with a frequency that this Court is not legally permitted to disclose. What can be disclosed: it was a lot. What cannot be disclosed: the exact number. What the Court will say anyway: it was a lot." /></p>
+          </div>
+          <div className="finding-item finding-item--visible">
+            <span className="finding-pilcrow">{"\u00b63."}</span>
+            <p className="finding-text">In January, an official designation was established. The date was not chosen randomly for this filing. The Petitioner will not be elaborating. The Docket Number speaks for itself, if the Respondent cares to look.</p>
+          </div>
+          <div className="finding-item finding-item--visible">
+            <span className="finding-pilcrow">{"\u00b64."}</span>
+            <p className="finding-text">The Respondent is a law student. He works night shifts. He is, at any given moment, probably tired. He texts back anyway. The Court finds this either very sweet or very concerning and has decided not to investigate further.</p>
+          </div>
+          <div className="finding-item finding-item--visible">
+            <span className="finding-pilcrow">{"\u00b65."}</span>
+            <p className="finding-text">The Petitioner, for her part, thinks too much. She knows this. She has filed this entire legal document instead of just saying the thing, which is submitted as Exhibit A through the entirety of this document.</p>
+          </div>
+          <div className="finding-item finding-item--visible">
+            <span className="finding-pilcrow">{"\u00b66."}</span>
+            <p className="finding-text">There were moments of misalignment. They were handled. The Court will not elaborate, not because it lacks information, but because both parties handled it well and that is, frankly, the whole point.</p>
+          </div>
+          <div className="finding-item finding-item--visible">
+            <span className="finding-pilcrow">{"\u00b67."}</span>
+            <p className="finding-text">There is a general agreement that these proceedings will, at some point, move into a physical venue. A timeframe has been proposed. The Petitioner is on record as being very chill about this. The Court neither confirms nor denies.</p>
+          </div>
+        </div>
       </SectionBlock>
 
       <SectionBlock numeral="III" label="Exhibits">
@@ -161,3 +156,4 @@ const App = () => {
 }
 
 export default App
+

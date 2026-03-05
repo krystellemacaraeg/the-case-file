@@ -14,6 +14,8 @@ const findings = [
   'The Court finds this conclusive.'
 ]
 
+const ANIMATED = [5, 9]
+
 const cls = (base, condition) => {
   if (condition) { return base + ' ' + base + '--visible' }
   return base
@@ -21,25 +23,31 @@ const cls = (base, condition) => {
 
 const FindingItem = ({ index, text }) => {
   const ref = useRef(null)
-  const [visible, setVisible] = useState(false)
+  const [visible, setVisible] = useState(!ANIMATED.includes(index))
 
   useEffect(() => {
+    if (!ANIMATED.includes(index)) return
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setVisible(true) },
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true)
+        } else {
+          setVisible(false)
+        }
+      },
       { threshold: 0.2 }
     )
     if (ref.current) observer.observe(ref.current)
     return () => observer.disconnect()
-  }, [])
+  }, [index])
 
-  const delay = Math.min(index * 60, 300)
   const pilcrow = '\u00b6' + (index + 1) + '.'
 
   return (
     <div
       ref={ref}
       className={cls('finding-item', visible)}
-      style={{ transitionDelay: delay + 'ms' }}
+      style={{ transitionDelay: ANIMATED.includes(index) ? '100ms' : '0ms' }}
     >
       <span className="finding-pilcrow">{pilcrow}</span>
       <p className="finding-text">{text}</p>

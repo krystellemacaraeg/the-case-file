@@ -6,21 +6,13 @@
   padding: var(--space-6) 0;
 }
 
+/* ── PREAMBLE — no animation ─────────────────────────────── */
 .ruling-preamble {
   font-family: var(--font-body);
   font-size: var(--text-base);
   color: var(--color-ink-muted);
   line-height: var(--leading-relaxed);
   text-align: justify;
-  hyphens: none;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity var(--transition-slow), transform var(--transition-slow);
-}
-
-.ruling-preamble--visible {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 /* ── PAUSE DOTS ──────────────────────────────────────────── */
@@ -78,6 +70,7 @@
   transform: translateY(0);
 }
 
+/* ── MAIN CONFESSION LINE ────────────────────────────────── */
 .ruling-main {
   font-family: var(--font-display);
   font-size: var(--text-2xl);
@@ -101,12 +94,26 @@
   opacity: 0.5;
 }
 
+/* ── CODA ────────────────────────────────────────────────── */
+.ruling-coda {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.ruling-coda--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── BODY TEXT ───────────────────────────────────────────── */
 .ruling-body {
   font-family: var(--font-body);
   font-size: var(--text-base);
   color: var(--color-ink-soft);
   line-height: var(--leading-relaxed);
   text-align: justify;
-  hyphens: none;
 }
-
